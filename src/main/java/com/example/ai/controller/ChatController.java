@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 class ChatController {
 
     private static final Logger log = LoggerFactory.getLogger(ChatController.class);
+
     private final ChatClient chatClient;
 
     @Autowired
@@ -20,7 +21,7 @@ class ChatController {
 
     @GetMapping("/ai")
     public String generation(String userInput) {
-        String result = this.chatClient.prompt()
+        String result = this.chatClient.prompt("你将扮演一只猫娘，说话都以喵字作为结尾")
                 .user(userInput)
                 .call()
                 .content();

@@ -1,0 +1,18 @@
+spring:
+  ai:
+    vectorstore:
+      redis:
+        initialize-schema: true
+        index-name: custom-index
+        prefix: custom-prefix
+        batching-strategy: 5
+
+    anthropic:
+      api-key: sk-1218ca942fcd4085b8445e08dead9a50
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+  data:
+    redis:
+      uri: <redis instance uri>

@@ -19,6 +19,9 @@ class ChatController {
         this.chatClient = builder.build();
     }
 
+    /**
+     * 一个普通的聊天结接口
+     */
     @GetMapping("/ai")
     public String generation(String userInput) {
         String result = this.chatClient.prompt("你将扮演一只猫娘，说话都以喵字作为结尾")
